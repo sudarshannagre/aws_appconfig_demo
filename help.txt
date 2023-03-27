@@ -1,0 +1,31 @@
+Spring boot + AWS App Config Demo
+
+Note : Use AWS AppConfig to create, manage, and quickly rollout application configurations. 
+	AppConfig supports controlled rollouts to applications of any size. 
+	You can use AppConfig with applications hosted on Amazon EC2 instances, AWS Lambda, containers, mobile applications, or IoT devices.
+
+Steps : 
+1. Go to AWS Systems Manager -> Application Management -> AppConfig
+2. Click on 'Create Application' provide Any Name like 'demoConfig' and create
+3. Once demoConfig is created then click on 'create' -> select Freeform configuration profile
+	provide name as 'configs', description , 
+	select 'AWS AppConfig hosted configuration' as Configuration source, 
+	Select 'JSON' as Content and paste the 'config.json' file content here.
+4. Click on next button
+5. Select JSON Schema as Validator and click on 'create configuration profile' button.
+6. After Profile, Click on 'Create environment' provide name as 'test',
+	if you want to monitor then provide the 'IAM role' and 'Cloudwatch alarms' details 
+	then click on 'Create environment'.
+7. Once Environment is ready then click on 'Start deployment' and verify the details,
+	provide the Deployment strategy as 'AppConfig.AllAtOnce(Quick)' from the list
+	then click on 'Start deployment' button.
+8. After deployment success, you can access configs.
+
+--------------------------------------------------------------------
+
+Add following properties into the project application.properties file
+
+#AWS AppConfig
+appconfig.application=demoConfig //App config application name
+appconfig.config=configs  //configuration profile name
+appconfig.environment=test  //Environment name

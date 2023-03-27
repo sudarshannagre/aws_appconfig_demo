@@ -1,0 +1,18 @@
+{
+  "configuration": [
+    {
+      "appId": "test1",
+      "partnerId": "120",
+      "opcoName": "US_Alaska",
+      "opcoLanguage": "en",
+      "opcoDomain": "https://local123.com"
+    },
+    {
+      "appId": "test2",
+      "partnerId": "211",
+      "opcoName": "US_Texas",
+      "opcoLanguage": "en",
+      "opcoDomain": "https://local321.com"
+    }
+  ]
+}
